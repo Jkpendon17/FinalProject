@@ -1,0 +1,132 @@
+/* General body styles */
+body {
+  background-color: white; /* White background for the entire page */
+  font-family: 'Roboto', Arial, sans-serif; /* Updated font from previous changes */
+  margin: 0;
+  padding: 0;
+  color: #333; /* Dark gray text for readability */
+  font-size: 16px; /* Base font size for consistency */
+}
+
+/* Container for layout */
+.container {
+  display: flex; /* Flex layout for left and right sides */
+  justify-content: center; /* Center content horizontally */
+  align-items: flex-start; /* Align to the top as previously adjusted */
+  height: 100vh; /* Full viewport height */
+  padding: 10px; /* Simple padding for spacing */
+  gap: 50px; /* Big gap between left and right sides */
+  
+}
+
+/* Styles for the left side */
+.left-side {
+ position: relative;
+ top: 100px;
+ right: 100px;
+  padding: 10px; /* Add padding for a clean look */
+  text-align: center; /* Center the title and description */
+}
+
+.left-side h1 {
+  font-size: 2.5rem; /* Larger, professional size */
+  font-weight: 700; /* Bold weight for emphasis */
+  color: #0056b3; /* A professional dark blue color */
+  margin-bottom: 10px; /* Add space below the title */
+}
+
+.left-side p {
+  font-size: 1.1rem; /* Slightly larger than body for readability */
+  line-height: 1.6; /* Improved line spacing for better flow */
+  margin-bottom: 10px; /* Add space below the paragraph */
+}
+
+.left-side blockquote {  /* Style for the quote */
+  font-size: 1.2rem; /* Slightly larger for emphasis */
+  font-style: italic; /* Italicize for a quote-like feel */
+  color: #666; /* Subtle gray color */
+  margin-top: 20px; /* Space above the quote */
+  border-left: 3px solid #0056b3; /* Left border for visual separation */
+  padding-left: 20px; /* Padding to align with the border */
+}
+
+/* Styles for the right side (form) */
+.right-side {
+  padding: 40px; /* Add padding to the form side for balance */
+}
+
+.right-side h2 {
+  font-size: 1.8rem; /* Slightly larger heading for the form */
+  font-weight: 700; /* Bold weight */
+  margin-bottom: 20px; /* Space below the heading */
+  color: #0056b3; /* Match the theme color */
+}
+
+.right-side label {
+  display: block; /* Make labels block elements */
+  margin-bottom: 5px; /* Space below labels */
+  font-weight: 500; /* Medium weight */
+}
+
+.right-side input {
+  width: 100%; /* Full width */
+  padding: 10px; /* Padding inside */
+  margin-bottom: 15px; /* Space below */
+  border: 1px solid #ccc; /* Subtle border */
+  border-radius: 4px; /* Rounded corners */
+  font-family: 'Roboto', Arial, sans-serif; /* Use the same font */
+}
+
+.right-side button {
+  width: 100%; /* Full width */
+  padding: 10px;
+  background-color: #0056b3; /* Blue color */
+  color: white; /* White text */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500; /* Medium weight */
+}
+
+.right-side button:hover {
+  background-color: #004494; /* Darker blue on hover */
+}
+
+.right-side a {
+  display: block; /* Block for easy clicking */
+  margin-top: 15px;
+  color: #0056b3; /* Link color */
+  text-decoration: none; /* No underline */
+  font-weight: 500; /* Medium weight */
+}
+
+.right-side a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* space between checkbox and text */
+  margin-bottom: 10px;
+}
+
+.checkbox-container input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.checkbox-container label {
+  position: relative;
+  bottom: 5px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.error {
+  color: red; /* Error color */
+  margin-top: 15px;
+  font-weight: 500; /* Medium weight */
+}

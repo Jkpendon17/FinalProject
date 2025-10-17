@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Student Infomation</title>
+</head>
+<body>
+<%- include('partials/header') %>
+
+<h2>Student Information</h2>
+
+<p><strong>Student ID:</strong> <%= student.student_id %></p>
+<p><strong>Name:</strong> <%= student.name %></p>
+<p><strong>Course:</strong> <%= student.course %></p>
+<p><strong>Year Level:</strong> <%= student.year_level %></p>
+<p><strong>Total Tuition:</strong> <%= student.total_tuition %></p>
+<p><strong>Monthly Allowance:</strong> ₱<%= student.monthly_allowance %></p>
+<p><strong>Financial Aid:</strong> <%= student.financial_aid %></p>
+<p><strong>Parental Support:</strong> <%= student.parental_support %></p>
+<p><strong>General Weight Average</strong> <%= student.gwa %></p>
+
+<a href="/editStudent/<%= student.id %>">Edit</a> |
+<a href="/dashboard">Back to Dashboard</a>
+
+<%- include('partials/footer') %>
+
+</body>
+</html>

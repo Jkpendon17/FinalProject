@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Profile</title>
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <div style="max-width: 450px; margin: 40px auto; border: 1px solid #ccc; padding: 20px; border-radius: 10px;">
+    <h2>Edit Profile</h2>
+    <hr>
+
+    <form action="/updateProfile/<%= user.id %>" method="POST">
+      <label>Username:</label><br>
+      <input type="text" name="username" value="<%= user.username %>" required><br><br>
+
+      <label>First Name:</label><br>
+      <input type="text" name="firstName" value="<%= user.firstName %>" required><br><br>
+
+      <label>Last Name:</label><br>
+      <input type="text" name="lastName" value="<%= user.lastName %>" required><br><br>
+
+      <label>Contact No:</label><br>
+      <input type="text" name="contactNo" value="<%= user.contactNo %>" required><br><br>
+
+      <label>Employee No:</label><br>
+      <input type="text" name="empNo" value="<%= user.empNo %>" required><br><br>
+
+      <button type="submit">Update Profile</button>
+    </form>
+
+    <div style="margin-top:15px;">
+      <a href="/userProfile/<%= user.id %>">Cancel</a>
+    </div>
+  </div>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

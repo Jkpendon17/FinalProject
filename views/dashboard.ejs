@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindCent Admin | Dashboard</title>
+  <link rel="stylesheet" href="/dashboard.css">
+</head>
+<body>
+
+  <%- include('partials/header') %>
+
+  <main class="dashboard">
+    <section class="dashboard-header">
+      <h2>Student Records</h2>
+      <a href="/addStudent" class="add-btn">+ Add Student</a>
+    </section>
+
+    <table class="student-table">
+      <thead>
+        <tr>
+          <th>Student ID</th>
+          <th>Name</th>
+          <th>Course</th>
+          <th>Year Level</th>
+          <th>Tuition</th>
+          <th>General Weighted Average</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% students.forEach(student => { %>
+          <tr>
+            <td><%= student.student_id %></td>
+            <td><a href="/viewStudent/<%= student.id %>"><%= student.name %></a></td>
+            <td><%= student.course %></td>
+            <td><%= student.year_level %></td>
+            <td><%= student.total_tuition %></td>
+            <td><%= student.gwa %></td>
+            <td>
+              <a href="/editStudent/<%= student.id %>" class="action-link edit">Edit</a>
+              <a href="/delete-student/<%= student.id %>" class="action-link delete">Delete</a>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </main>
+
+  <%- include('partials/footer') %>
+
+</body>
+</html>

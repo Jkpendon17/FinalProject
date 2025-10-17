@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit student Information</title>
+</head>
+<body>
+  <%- include('partials/header') %>
+
+<div style="max-width: 900px; margin: 40px auto; padding: 20px; background: #f8f8f8; border-radius: 10px;">
+  <h2 style="text-align: center; margin-bottom: 20px;">Edit Student Information</h2>
+
+  <form action="/updateStudent/<%= student.id %>" method="POST" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+    
+    <!-- Left Column -->
+    <div>
+      <label>Student ID:</label><br>
+      <input type="text" name="student_id" value="<%= student.student_id %>" required style="width: 100%; padding: 8px;"><br><br>
+
+      <label>Full Name:</label><br>
+      <input type="text" name="name" value="<%= student.name %>" required style="width: 100%; padding: 8px;"><br><br>
+
+      <label>Course:</label><br>
+      <input type="text" name="course" value="<%= student.course %>" required style="width: 100%; padding: 8px;"><br><br>
+      
+      <label for="year_level">Year Level:</label>
+      <select name="year_level" id="year_level" required>
+      <option value="1st Year" <%= student.year_level === '1st Year' ? 'selected' : '' %>>1st Year</option>
+      <option value="2nd Year" <%= student.year_level === '2nd Year' ? 'selected' : '' %>>2nd Year</option>
+      <option value="3rd Year" <%= student.year_level === '3rd Year' ? 'selected' : '' %>>3rd Year</option>
+      <option value="4th Year" <%= student.year_level === '4th Year' ? 'selected' : '' %>>4th Year</option>
+      </select> <br><br>
+
+
+
+      <label>Total Tuition:</label><br>
+      <input type="number" name="total_tuition" step="0.01" value="<%= student.total_tuition %>" style="width: 100%; padding: 8px;"><br><br>
+
+      <label>Monthly Allowance:</label><br>
+      <input type="number" name="monthly_allowance" step="0.01" value="<%= student.monthly_allowance %>" style="width: 100%; padding: 8px;"><br><br>
+    </div>
+
+    <!-- Right Column -->
+    <div>
+      <fieldset style="background: #d9d9d9; padding: 10px 15px; border-radius: 5px;">
+        <legend>Financial Aid <small>(Check the following option):</small></legend>
+        <select name="financial_aid" required style="width: 100%; padding: 8px;">
+          <option value="">Select Financial Aid</option>
+          <option value="CHED Merit Scholarship Program (CMSP)" <%= student.financial_aid === 'CHED Merit Scholarship Program (CMSP)' ? 'selected' : '' %>>CHED Merit Scholarship Program (CMSP)</option>
+          <option value="SM College Scholarship" <%= student.financial_aid === 'SM College Scholarship' ? 'selected' : '' %>>SM College Scholarship</option>
+          <option value="PHINMA Scholarship" <%= student.financial_aid === 'PHINMA Scholarship' ? 'selected' : '' %>>PHINMA Scholarship</option>
+          <option value="OWWA Scholarship" <%= student.financial_aid === 'OWWA Scholarship' ? 'selected' : '' %>>OWWA Scholarship</option>
+          <option value="None" <%= student.financial_aid === 'None' ? 'selected' : '' %>>None</option>
+        </select>
+      </fieldset>
+      <br>
+
+      <fieldset style="background: #d9d9d9; padding: 10px 15px; border-radius: 5px;">
+        <legend>Financial Parent Support <small>(Check the following option):</small></legend>
+        <select name="parental_support" required style="width: 100%; padding: 8px;">
+          <option value="">Select Financial Parent Support</option>
+          <option value="Parents" <%= student.parental_support === 'Parents' ? 'selected' : '' %>>Parents</option>
+          <option value="Relatives Abroad" <%= student.parental_support === 'Relatives Abroad' ? 'selected' : '' %>>Relatives Abroad</option>
+          <option value="Working Students" <%= student.parental_support === 'Working Students' ? 'selected' : '' %>>Working Students</option>
+          <option value="Sponsors" <%= student.parental_support === 'Sponsors' ? 'selected' : '' %>>Sponsors</option>
+          <option value="Government as Financial Parent" <%= student.parental_support === 'Government as Financial Parent' ? 'selected' : '' %>>Government as Financial Parent</option>
+          <option value="Student Loans" <%= student.parental_support === 'Student Loans' ? 'selected' : '' %>>Student Loans</option>
+        </select>
+      </fieldset>
+      <br>
+
+      <label>General Weight Average(GWA):</label><br>
+      <input type="number" name="gwa" step="0.01" value="<%= student.gwa %>" style="width: 100%; padding: 8px;"><br><br>
+    </div>
+
+    <!-- Submit Button -->
+    <div style="grid-column: span 2; text-align: center; margin-top: 20px;">
+      <button type="submit" style="padding: 10px 30px; background: #2196F3; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Update Student
+      </button>
+    </div>
+
+  </form>
+</div>
+
+<%- include('partials/footer') %>
+
+
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindCent Admin | Sign Up</title>
+    <link rel="stylesheet" href="/signup.css">  <!-- Link to your external CSS file -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">  <!-- Google Fonts for Roboto -->
+</head>
+<body>
+  <main>
+    <div class="container">
+      <div class="left-side">
+        <h1>MindCent Admin Portal</h1>
+        <p>Empowering admins to manage financial stress and mental well-being for students.</p>
+        <blockquote>"Empowering admins to foster financial stability and mental health, one student at a time."</blockquote>
+      </div>
+
+      <div class="right-side">
+        <form action="/signup" method="POST" class="form-container">
+          <h2>Sign Up</h2>
+
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required>
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+
+          <label for="confirmPassword">Confirm Password:</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+          <div class="checkbox-container">
+            <input type="checkbox" id="showPassword">
+            <label for="showPassword">Show Password</label>
+          </div>
+
+          <label for="firstName">First Name:</label>
+          <input type="text" id="firstName" name="firstName" required>
+
+          <label for="lastName">Last Name:</label>
+          <input type="text" id="lastName" name="lastName" required>
+
+          <label for="contactNo">Contact No:</label>
+          <input type="text" id="contactNo" name="contactNo">
+
+          <label for="empNo">Employee No:</label>
+          <input type="text" id="empNo" name="empNo">
+
+          <button type="submit">Sign Up</button>
+          <a href="/login">Already have an account? Login</a>
+
+          <% if (error) { %>
+            <p class="error"><%= error %></p>
+          <% } %>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer placed below main -->
+  <footer class="footer">
+    © 2025 MindCent. All rights reserved.
+  </footer>
+
+  <script>
+    const checkbox = document.getElementById('showPassword');
+    const password = document.getElementById('password');
+    const confirmPassword = document.getElementById('confirmPassword');
+    checkbox.addEventListener('change', () => {
+      password.type = checkbox.checked ? 'text' : 'password';
+      confirmPassword.type = checkbox.checked ? 'text' : 'password';
+    });
+  </script>
+</body>
+
+
+</html>

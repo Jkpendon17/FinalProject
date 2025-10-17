@@ -1,0 +1,63 @@
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>MindCent | Login</title>
+     <link rel="stylesheet" href="/login.css">  
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+   </head>
+   <body>
+     <main>
+       <div class="container">
+         <div class="left-side">
+           <h1>MindCent</h1>
+          
+          <p>Empowering admins to manage financial stress and mental well-being for students.</p>  <!-- Slightly updated for admin context -->
+       
+         </div>
+   
+         <div class="right-side">
+           <form action="/login" method="POST">
+             <h2>Login</h2>
+             <label for="username">Username</label>
+             <input type="text" name="username" required>
+   
+             <label for="password">Password</label>
+             <input type="password" name="password" id="password" required>
+   
+             <div class="checkbox-container">
+               <input type="checkbox" id="showPassword">
+               <label for="showPassword">Show Password</label>
+             </div>
+             
+   
+             <button type="submit">Login</button>
+             <a href="/signup">Don’t have an account? Sign up</a>
+   
+             <% if (error) { %>
+               <p class="error"><%= error %></p>
+             <% } %>
+             <script>
+
+              const showPassword = document.getElementById('showPassword');
+               const passwordInput = document.querySelector('input[type="password"]');
+
+              showPassword.addEventListener('change', function() {
+              if (this.checked) {
+               passwordInput.type = 'text';
+               } else {
+                 passwordInput.type = 'password';
+    }
+  });
+</script>
+
+           </form>
+         </div>
+       </div>
+     </main>
+   
+     <%- include('partials/footer') %>
+   </body>
+   </html>
+   
