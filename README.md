@@ -5,6 +5,6 @@ To extract the git files:
 3. Then, type git clone (ctrl+v) then enter
    
 To run the project install the packages first and follow the instructions below:
-npm init -y
-npm install --save-dev
-npm i nodemon express ejs mysql
+1. npm init -y
+2. npm install --save-dev
+3. npm i nodemon express ejs mysql
