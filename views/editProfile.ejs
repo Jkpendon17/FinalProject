@@ -3,36 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <title>Edit Profile</title>
+  <link rel="stylesheet" href="/header.css">
+  <link rel="stylesheet" href="/editUser.css">
 </head>
 <body>
   <%- include('partials/header') %>
 
-  <div style="max-width: 450px; margin: 40px auto; border: 1px solid #ccc; padding: 20px; border-radius: 10px;">
-    <h2>Edit Profile</h2>
+  <div class="container">
+    <h2 class="editProf">Edit Profile</h2>
     <hr>
 
-    <form action="/updateProfile/<%= user.id %>" method="POST">
-      <label>Username:</label><br>
-      <input type="text" name="username" value="<%= user.username %>" required><br><br>
+    <form action="/updateProfile/<%= user.id %>" method="POST" class="edit-form">
+      <div class="form-group">
+        <label>Username:</label>
+        <input type="text" name="username" value="<%= user.username %>" required>
+      </div>
 
-      <label>First Name:</label><br>
-      <input type="text" name="firstName" value="<%= user.firstName %>" required><br><br>
+      <div class="form-group">
+        <label>First Name:</label>
+        <input type="text" name="firstName" value="<%= user.firstName %>" required>
+      </div>
 
-      <label>Last Name:</label><br>
-      <input type="text" name="lastName" value="<%= user.lastName %>" required><br><br>
+      <div class="form-group">
+        <label>Last Name:</label>
+        <input type="text" name="lastName" value="<%= user.lastName %>" required>
+      </div>
 
-      <label>Contact No:</label><br>
-      <input type="text" name="contactNo" value="<%= user.contactNo %>" required><br><br>
+      <div class="form-group">
+        <label>Contact No:</label>
+        <input type="text" name="contactNo" value="<%= user.contactNo %>" required>
+      </div>
 
-      <label>Employee No:</label><br>
-      <input type="text" name="empNo" value="<%= user.empNo %>" required><br><br>
+      <div class="form-group">
+        <label>Employee No:</label>
+        <input type="text" name="empNo" value="<%= user.empNo %>" required>
+      </div>
 
-      <button type="submit">Update Profile</button>
+      <div class="form-actions">
+        <button type="submit" class="btn-primary">Update Profile</button>
+        <a href="/userProfile/<%= user.id %>" class="btn-back">Cancel</a>
+      </div>
     </form>
-
-    <div style="margin-top:15px;">
-      <a href="/userProfile/<%= user.id %>">Cancel</a>
-    </div>
   </div>
 
   <%- include('partials/footer') %>

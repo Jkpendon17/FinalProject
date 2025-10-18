@@ -1,0 +1,109 @@
+
+
+body {
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+/* Main Container */
+.container {
+  max-width: 900px;
+  margin: 60px auto; /* added more top margin for space below header */
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.studInfo {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.6em;
+  color: #222;
+}
+
+/* Form Layout */
+.edit-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px; /* little more spacing between columns */
+}
+
+/* Labels */
+.form-column label {
+  font-weight: 600;
+  margin-top: 10px;
+  display: block;
+  color: #333;
+}
+
+/* Input & Select */
+input,
+select {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 5px;
+  background: #f9f9f9;
+  font-size: 14.5px;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #0078D4;
+}
+
+/* Form Actions */
+.form-actions {
+  grid-column: span 2;
+  text-align: center;
+  margin-top: 25px;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #0078D4;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #005fa3;
+}
+
+.btn-back {
+  background-color: #ccc;
+  color: #333;
+  text-decoration: none;
+  padding: 10px 24px;
+  border-radius: 5px;
+  margin-left: 10px;
+  transition: 0.3s;
+}
+
+.btn-back:hover {
+  background-color: #999;
+  color: #fff;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .edit-form {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  .form-actions {
+    margin-top: 15px;
+  }
+}

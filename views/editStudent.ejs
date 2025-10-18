@@ -1,51 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit student Information</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Student Information</title>
+  <link rel="stylesheet" href="/header.css">
+  <link rel="stylesheet" href="/editStud.css">
 </head>
 <body>
   <%- include('partials/header') %>
 
-<div style="max-width: 900px; margin: 40px auto; padding: 20px; background: #f8f8f8; border-radius: 10px;">
-  <h2 style="text-align: center; margin-bottom: 20px;">Edit Student Information</h2>
-
-  <form action="/updateStudent/<%= student.id %>" method="POST" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-    
-    <!-- Left Column -->
-    <div>
-      <label>Student ID:</label><br>
-      <input type="text" name="student_id" value="<%= student.student_id %>" required style="width: 100%; padding: 8px;"><br><br>
-
-      <label>Full Name:</label><br>
-      <input type="text" name="name" value="<%= student.name %>" required style="width: 100%; padding: 8px;"><br><br>
-
-      <label>Course:</label><br>
-      <input type="text" name="course" value="<%= student.course %>" required style="width: 100%; padding: 8px;"><br><br>
+  <div class="container">
+    <h2 class="studInfo">Edit Student Information</h2>
+    <form action="/updateStudent/<%= student.id %>" method="POST" class="edit-form">
       
-      <label for="year_level">Year Level:</label>
-      <select name="year_level" id="year_level" required>
-      <option value="1st Year" <%= student.year_level === '1st Year' ? 'selected' : '' %>>1st Year</option>
-      <option value="2nd Year" <%= student.year_level === '2nd Year' ? 'selected' : '' %>>2nd Year</option>
-      <option value="3rd Year" <%= student.year_level === '3rd Year' ? 'selected' : '' %>>3rd Year</option>
-      <option value="4th Year" <%= student.year_level === '4th Year' ? 'selected' : '' %>>4th Year</option>
-      </select> <br><br>
+      <!-- Left Column -->
+      <div class="form-column">
+        <label>Student ID:</label>
+        <input type="text" name="student_id" value="<%= student.student_id %>" required>
 
+        <label>Full Name:</label>
+        <input type="text" name="name" value="<%= student.name %>" required>
 
+        <label>Course:</label>
+        <input type="text" name="course" value="<%= student.course %>" required>
 
-      <label>Total Tuition:</label><br>
-      <input type="number" name="total_tuition" step="0.01" value="<%= student.total_tuition %>" style="width: 100%; padding: 8px;"><br><br>
+        <label for="year_level">Year Level:</label>
+        <select name="year_level" id="year_level" required>
+          <option value="1st Year" <%= student.year_level === '1st Year' ? 'selected' : '' %>>1st Year</option>
+          <option value="2nd Year" <%= student.year_level === '2nd Year' ? 'selected' : '' %>>2nd Year</option>
+          <option value="3rd Year" <%= student.year_level === '3rd Year' ? 'selected' : '' %>>3rd Year</option>
+          <option value="4th Year" <%= student.year_level === '4th Year' ? 'selected' : '' %>>4th Year</option>
+        </select>
 
-      <label>Monthly Allowance:</label><br>
-      <input type="number" name="monthly_allowance" step="0.01" value="<%= student.monthly_allowance %>" style="width: 100%; padding: 8px;"><br><br>
-    </div>
+        <label>Total Tuition:</label>
+        <input type="number" name="total_tuition" step="0.01" value="<%= student.total_tuition %>">
 
-    <!-- Right Column -->
-    <div>
-      <fieldset style="background: #d9d9d9; padding: 10px 15px; border-radius: 5px;">
-        <legend>Financial Aid <small>(Check the following option):</small></legend>
-        <select name="financial_aid" required style="width: 100%; padding: 8px;">
+        <label>Monthly Allowance:</label>
+        <input type="number" name="monthly_allowance" step="0.01" value="<%= student.monthly_allowance %>">
+      </div>
+
+      <!-- Right Column -->
+      <div class="form-column">
+        <label>Financial Aid:</label>
+        <select name="financial_aid" required>
           <option value="">Select Financial Aid</option>
           <option value="CHED Merit Scholarship Program (CMSP)" <%= student.financial_aid === 'CHED Merit Scholarship Program (CMSP)' ? 'selected' : '' %>>CHED Merit Scholarship Program (CMSP)</option>
           <option value="SM College Scholarship" <%= student.financial_aid === 'SM College Scholarship' ? 'selected' : '' %>>SM College Scholarship</option>
@@ -53,12 +51,9 @@
           <option value="OWWA Scholarship" <%= student.financial_aid === 'OWWA Scholarship' ? 'selected' : '' %>>OWWA Scholarship</option>
           <option value="None" <%= student.financial_aid === 'None' ? 'selected' : '' %>>None</option>
         </select>
-      </fieldset>
-      <br>
 
-      <fieldset style="background: #d9d9d9; padding: 10px 15px; border-radius: 5px;">
-        <legend>Financial Parent Support <small>(Check the following option):</small></legend>
-        <select name="parental_support" required style="width: 100%; padding: 8px;">
+        <label>Financial Parent Support:</label>
+        <select name="parental_support" required>
           <option value="">Select Financial Parent Support</option>
           <option value="Parents" <%= student.parental_support === 'Parents' ? 'selected' : '' %>>Parents</option>
           <option value="Relatives Abroad" <%= student.parental_support === 'Relatives Abroad' ? 'selected' : '' %>>Relatives Abroad</option>
@@ -67,26 +62,19 @@
           <option value="Government as Financial Parent" <%= student.parental_support === 'Government as Financial Parent' ? 'selected' : '' %>>Government as Financial Parent</option>
           <option value="Student Loans" <%= student.parental_support === 'Student Loans' ? 'selected' : '' %>>Student Loans</option>
         </select>
-      </fieldset>
-      <br>
 
-      <label>General Weight Average(GWA):</label><br>
-      <input type="number" name="gwa" step="0.01" value="<%= student.gwa %>" style="width: 100%; padding: 8px;"><br><br>
-    </div>
+        <label>General Weighted Average (GWA):</label>
+        <input type="number" name="gwa" step="0.01" value="<%= student.gwa %>">
+      </div>
 
-    <!-- Submit Button -->
-    <div style="grid-column: span 2; text-align: center; margin-top: 20px;">
-      <button type="submit" style="padding: 10px 30px; background: #2196F3; color: white; border: none; border-radius: 5px; cursor: pointer;">
-        Update Student
-      </button>
-    </div>
+      <!-- Submit Button -->
+      <div class="form-actions">
+        <button type="submit" class="btn-primary">Update Student</button>
+        <a href="/dashboard" class="btn-back">Cancel</a>
+      </div>
+    </form>
+  </div>
 
-  </form>
-</div>
-
-<%- include('partials/footer') %>
-
-
-
+  <%- include('partials/footer') %>
 </body>
 </html>

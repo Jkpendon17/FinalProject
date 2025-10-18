@@ -1,7 +1,7 @@
 /* General body styles */
 body {
   background-color: white; /* White background for the entire page */
-  font-family: 'Roboto', Arial, sans-serif; /* Updated font from previous changes */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;/* Updated font from previous changes */
   margin: 0;
   padding: 0;
   color: #333; /* Dark gray text for readability */

@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Student Infomation</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Student Information</title>
+<link rel="stylesheet" href="/header.css">
+<link rel="stylesheet" href="/student.css">
 </head>
 <body>
-<%- include('partials/header') %>
+  <%- include('partials/header') %>
 
-<h2>Student Information</h2>
+  <div class="container">
+    <a href="/dashboard" class="btn-back">← Back to Dashboard</a>
+    <h2 class="stud">Student Information</h2>
+    <div class="card">
+      <p><strong>Student ID:</strong> <%= student.student_id %></p>
+      <p><strong>Name:</strong> <%= student.name %></p>
+      <p><strong>Course:</strong> <%= student.course %></p>
+      <p><strong>Year Level:</strong> <%= student.year_level %></p>
+      <p><strong>Total Tuition:</strong> ₱<%= student.total_tuition %></p>
+      <p><strong>Monthly Allowance:</strong> ₱<%= student.monthly_allowance %></p>
+      <p><strong>Financial Aid:</strong> <%= student.financial_aid %></p>
+      <p><strong>Parental Support:</strong> <%= student.parental_support %></p>
+      <p><strong>General Weighted Average (GWA):</strong> <%= student.gwa %></p>
+    </div>
 
-<p><strong>Student ID:</strong> <%= student.student_id %></p>
-<p><strong>Name:</strong> <%= student.name %></p>
-<p><strong>Course:</strong> <%= student.course %></p>
-<p><strong>Year Level:</strong> <%= student.year_level %></p>
-<p><strong>Total Tuition:</strong> <%= student.total_tuition %></p>
-<p><strong>Monthly Allowance:</strong> ₱<%= student.monthly_allowance %></p>
-<p><strong>Financial Aid:</strong> <%= student.financial_aid %></p>
-<p><strong>Parental Support:</strong> <%= student.parental_support %></p>
-<p><strong>General Weight Average</strong> <%= student.gwa %></p>
+    <div class="action-buttons">
+      <a href="/editStudent/<%= student.id %>" class="btn-primary">Edit Student</a>
+    </div>
+  </div>
 
-<a href="/editStudent/<%= student.id %>">Edit</a> |
-<a href="/dashboard">Back to Dashboard</a>
-
-<%- include('partials/footer') %>
-
+  <%- include('partials/footer') %>
 </body>
 </html>

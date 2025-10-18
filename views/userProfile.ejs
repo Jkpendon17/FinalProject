@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <link rel="stylesheet" href="/user.css">
+  <link rel="stylesheet" href="/header.css">
 </head>
 <body>
-    <%- include('partials/header') %>
+  <%- include('partials/header') %>
 
-<div style="max-width: 450px; margin: 40px auto; border: 1px solid #ccc; padding: 20px; border-radius: 10px;">
-  <h2>User Profile</h2>
-  <hr>
-  
-  <p><strong>Username:</strong> <%= user.username %></p>
-  <p><strong>First Name:</strong> <%= user.firstName %></p>
-  <p><strong>Last Name:</strong> <%= user.lastName %></p>
-  <p><strong>Contact No:</strong> <%= user.contactNo %></p>
-  <p><strong>Employee No:</strong> <%= user.empNo %></p>
+  <div class="profile-container">
+    <h2 class="user">User Profile</h2>
+    <hr>
 
-</div>
+    <div class="info-card">
+      <p><strong>Username:</strong> <%= user.username %></p>
+      <p><strong>First Name:</strong> <%= user.firstName %></p>
+      <p><strong>Last Name:</strong> <%= user.lastName %></p>
+      <p><strong>Contact No:</strong> <%= user.contactNo %></p>
+      <p><strong>Employee No:</strong> <%= user.empNo %></p>
+    </div>
 
-<div style="text-align:center;">
-  <a href="/dashboard">Back to Dashboard</a>
-</div>
- <a href="/editProfile/<%= user.id %>">Edit Profile</a>
-<%- include('partials/footer') %>
+    <div class="action-buttons">
+      <a href="/editProfile/<%= user.id %>" class="btn-primary">Edit Profile</a>
+      <a href="/dashboard" class="btn-back">Back to Dashboard</a>
+    </div>
+  </div>
+
+  <%- include('partials/footer') %>
 </body>
 </html>

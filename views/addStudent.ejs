@@ -1,92 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Student Information</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Student Information</title>
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="/add.css">
 </head>
 <body>
-   <%- include('partials/header') %>
+  <%- include('partials/header') %>
 
-<div style="max-width: 900px; margin: 40px auto; padding: 20px; background: #f8f8f8; border-radius: 10px;">
-  <h2 style="text-align: center; margin-bottom: 20px;">Add Student Information</h2>
+  <div class="container">
+    <a href="/dashboard" class="btn-back">← Back to Dashboard</a>
+    <h2>Add Student Information</h2>
 
-  <form action="/addStudent" method="POST" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-    
-    <!-- Left Column -->
-    <div>
-      <label>Student ID:</label><br>
-      <input type="text" name="student_id" required style="width: 100%; padding: 8px;"><br><br>
+    <form action="/addStudent" method="POST">
+      <!-- LEFT COLUMN -->
+      <div>
+        <label>Student ID:</label>
+        <input type="text" name="student_id" required>
 
-      <label>Full Name:</label><br>
-      <input type="text" name="name" required style="width: 100%; padding: 8px;"><br><br>
+        <label>Full Name:</label>
+        <input type="text" name="name" required>
 
-      <label>Course:</label><br>
-      <input type="text" name="course" required style="width: 100%; padding: 8px;"><br><br>
-       
-       
-      <label for="year_level">Year Level:</label>
-      <select name="year_level" id="year_level" required>
-      <option value="">Select Year Level</option>
-      <option value="1st Year">1st Year</option>
-      <option value="2nd Year">2nd Year</option>
-      <option value="3rd Year">3rd Year</option>
-      <option value="4th Year">4th Year</option>
-        </select><br><br>
+        <label>Course:</label>
+        <input type="text" name="course" required>
 
-
-
-      <label>Total Tuition:</label><br>
-      <input type="number" name="total_tuition"  style="width: 100%; padding: 8px;"><br><br>
-
-      <label>Monthly Allowance:</label><br>
-      <input type="number" name="monthly_allowance" style="width: 100%; padding: 8px;"><br><br>
-    </div>
-
-    <!-- Right Column -->
-    <div>
-      <fieldset style="background: #d9d9d9; padding: 10px 15px; border-radius: 5px;">
-        <legend>Financial Aid <small>(Check the following option):</small></legend>
-        <select name="financial_aid" required style="width: 100%; padding: 8px;">
-          <option value="">Select Financial Aid</option>
-          <option value="CHED Merit Scholarship Program (CMSP)">CHED Merit Scholarship Program (CMSP)</option>
-          <option value="SM College Scholarship">SM College Scholarship</option>
-          <option value="PHINMA Scholarship">PHINMA Scholarship</option>
-          <option value="OWWA Scholarship">OWWA Scholarship</option>
-          <option value="None">None</option>
+        <label>Year Level:</label>
+        <select name="year_level" id="year_level" required>
+          <option value="">Select Year Level</option>
+          <option value="1st Year">1st Year</option>
+          <option value="2nd Year">2nd Year</option>
+          <option value="3rd Year">3rd Year</option>
+          <option value="4th Year">4th Year</option>
         </select>
-      </fieldset>
-      <br>
 
-      <fieldset style="background: #d9d9d9; padding: 10px 15px; border-radius: 5px;">
-        <legend>Financial Parent Support <small>(Check the following option):</small></legend>
-        <select name="parental_support" required style="width: 100%; padding: 8px;">
-          <option value="">Select Financial Parent Support</option>
-          <option value="Parents">Parents</option>
-          <option value="Relatives Abroad">Relatives Abroad</option>
-          <option value="Working Students">Working Students</option>
-          <option value="Sponsors">Sponsors</option>
-          <option value="Government as Financial Parent">Government as Financial Parent</option>
-          <option value="Student Loans">Student Loans</option>
-        </select>
-      </fieldset>
-      <br>
+        <label>Total Tuition:</label>
+        <input type="number" name="total_tuition" step="0.01">
 
-      <label>General Weight Average(GWA):</label><br>
-      <input type="number" name="gwa" step="0.01" style="width: 100%; padding: 8px;"><br><br>
-    </div>
+        <label>Monthly Allowance:</label>
+        <input type="number" name="monthly_allowance" step="0.01">
+      </div>
 
-    <!-- Submit Button -->
-    <div style="grid-column: span 2; text-align: center; margin-top: 20px;">
-      <button type="submit" style="padding: 10px 30px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
-        Save Student
-      </button>
-    </div>
+      <!-- RIGHT COLUMN -->
+      <div>
+        <fieldset>
+          <legend>Financial Aid</legend>
+          <select name="financial_aid" required>
+            <option value="">Select Financial Aid</option>
+            <option value="CHED Merit Scholarship Program (CMSP)">CHED Merit Scholarship Program (CMSP)</option>
+            <option value="SM College Scholarship">SM College Scholarship</option>
+            <option value="PHINMA Scholarship">PHINMA Scholarship</option>
+            <option value="OWWA Scholarship">OWWA Scholarship</option>
+            <option value="None">None</option>
+          </select>
+        </fieldset>
 
-  </form>
-</div>
+        <fieldset>
+          <legend>Financial Parent Support</legend>
+          <select name="parental_support" required>
+            <option value="">Select Financial Parent Support</option>
+            <option value="Parents">Parents</option>
+            <option value="Relatives Abroad">Relatives Abroad</option>
+            <option value="Working Students">Working Student</option>
+            <option value="Sponsors">Sponsors</option>
+            <option value="Government as Financial Parent">Government as Financial Parent</option>
+            <option value="Student Loans">Student Loans</option>
+          </select>
+        </fieldset>
 
-<%- include('partials/footer') %>
+        <label>General Weighted Average (GWA):</label>
+        <input type="number" name="gwa" step="0.01">
+      </div>
 
+      <!-- SUBMIT BUTTON -->
+      <div class="submit-section">
+        <button type="submit">Save Student</button>
+      </div>
+    </form>
+  </div>
+
+  <%- include('partials/footer') %>
 </body>
 </html>

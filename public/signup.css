@@ -1,13 +1,9 @@
 /* General Reset & Fonts */
-* {
-  margin: 0;
-  box-sizing: ;
-  font-family: "Roboto", sans-serif;
-}
+
 
 body {
   background-color: #f7f9fc;
- 
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   justify-content: center;
   align-items: center;
   min-height: 100vh;

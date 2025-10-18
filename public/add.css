@@ -1,0 +1,88 @@
+
+
+body {
+  background-color: #f7f9fc;
+  color: #333;
+}
+
+
+.container {
+  max-width: 900px;
+  background: white;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+label {
+  font-weight: 600;
+  color: #444;
+  display: block;
+  margin-bottom: 6px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+fieldset {
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+}
+
+legend {
+  font-weight: bold;
+  color: #333;
+}
+
+button {
+  padding: 12px 40px;
+  background-color: #0078D4;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
+
+.submit-section {
+  grid-column: span 2;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-back {
+  display: inline-block;
+  margin-bottom: 20px;
+  text-decoration: none;
+  background: #ccc;
+  padding: 8px 15px;
+  border-radius: 6px;
+  color: #333;
+  transition: 0.3s;
+}
+
+.btn-back:hover {
+  background: #999;
+  color: #fff;
+}

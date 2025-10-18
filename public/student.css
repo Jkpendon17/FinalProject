@@ -1,0 +1,68 @@
+
+
+body {
+  background-color: #f7f9fc;
+  color: #333;
+}
+
+.container {
+  max-width: 700px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.stud{
+text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: #fafafa;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+p {
+  font-size: 15px;
+  color: #444;
+  margin: 10px 0;
+}
+
+.btn-back {
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 20px;
+  background: #ccc;
+  color: #333;
+  padding: 8px 15px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.btn-back:hover {
+  background: #999;
+  color: #fff;
+}
+
+.action-buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-primary {
+  text-decoration: none;
+  padding: 10px 25px;
+  background: #0078D4;
+  color: white;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #005fa3;
+}
