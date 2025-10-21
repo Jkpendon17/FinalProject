@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Add Student Information</title>
-  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="/header.css">
   <link rel="stylesheet" href="/add.css">
 </head>
 <body>
@@ -12,22 +12,23 @@
 
   <div class="container">
     <a href="/dashboard" class="btn-back">← Back to Dashboard</a>
-    <h2>Add Student Information</h2>
+    <h2 class="page-title">Add Student Information</h2>
+    <hr>
 
-    <form action="/addStudent" method="POST">
+    <form action="/addStudent" method="POST" class="form-grid">
       <!-- LEFT COLUMN -->
-      <div>
-        <label>Student ID:</label>
-        <input type="text" name="student_id" required>
+      <div class="form-column">
+        <label for="student_id">Student ID:</label>
+        <input type="text" id="student_id" name="student_id" required>
 
-        <label>Full Name:</label>
-        <input type="text" name="name" required>
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
 
-        <label>Course:</label>
-        <input type="text" name="course" required>
+        <label for="course">Course:</label>
+        <input type="text" id="course" name="course" required>
 
-        <label>Year Level:</label>
-        <select name="year_level" id="year_level" required>
+        <label for="year_level">Year Level:</label>
+        <select id="year_level" name="year_level" required>
           <option value="">Select Year Level</option>
           <option value="1st Year">1st Year</option>
           <option value="2nd Year">2nd Year</option>
@@ -35,15 +36,15 @@
           <option value="4th Year">4th Year</option>
         </select>
 
-        <label>Total Tuition:</label>
-        <input type="number" name="total_tuition" step="0.01">
+        <label for="total_tuition">Total Tuition:</label>
+        <input type="number" id="total_tuition" name="total_tuition" step="0.01">
 
-        <label>Monthly Allowance:</label>
-        <input type="number" name="monthly_allowance" step="0.01">
+        <label for="monthly_allowance">Monthly Allowance:</label>
+        <input type="number" id="monthly_allowance" name="monthly_allowance" step="0.01">
       </div>
 
       <!-- RIGHT COLUMN -->
-      <div>
+      <div class="form-column">
         <fieldset>
           <legend>Financial Aid</legend>
           <select name="financial_aid" required>
@@ -69,13 +70,13 @@
           </select>
         </fieldset>
 
-        <label>General Weighted Average (GWA):</label>
-        <input type="number" name="gwa" step="0.01">
+        <label for="gwa">General Weighted Average (GWA):</label>
+        <input type="number" id="gwa" name="gwa" step="0.01">
       </div>
 
       <!-- SUBMIT BUTTON -->
       <div class="submit-section">
-        <button type="submit">Save Student</button>
+        <button type="submit" class="btn-primary">Save Student</button>
       </div>
     </form>
   </div>

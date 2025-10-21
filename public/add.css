@@ -1,26 +1,41 @@
-
-
 body {
   background-color: #f7f9fc;
   color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
+/* Card container */
 .container {
   max-width: 900px;
-  background: white;
+  background: #fff;
   margin: 40px auto;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Title */
+.page-title {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #2a2a2a;
+}
+
+/* Divider */
+hr {
+  border: none;
+  border-top: 2px solid #eee;
+  margin-bottom: 25px;
+}
+
+/* Two-column layout */
 form {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 25px;
 }
 
+/* Form labels and fields */
 label {
   font-weight: 600;
   color: #444;
@@ -35,13 +50,21 @@ input, select {
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+input:focus, select:focus {
+  border-color: #0078D4;
+  box-shadow: 0 0 3px rgba(0, 120, 212, 0.4);
+  outline: none;
+}
+
+/* Fieldsets */
 fieldset {
-  background: #f0f0f0;
+  background: #f7f7f7;
   border: 1px solid #ddd;
   border-radius: 6px;
-  padding: 10px 15px;
+  padding: 12px 15px;
   margin-bottom: 15px;
 }
 
@@ -50,27 +73,31 @@ legend {
   color: #333;
 }
 
+/* Submit button */
 button {
   padding: 12px 40px;
   background-color: #0078D4;
   border: none;
-  color: white;
+  color: #fff;
   border-radius: 8px;
   cursor: pointer;
   font-size: 16px;
-  transition: 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
   background-color: #005fa3;
+  transform: translateY(-2px);
 }
 
+/* Centered button area */
 .submit-section {
   grid-column: span 2;
   text-align: center;
   margin-top: 20px;
 }
 
+/* Back button */
 .btn-back {
   display: inline-block;
   margin-bottom: 20px;
@@ -79,10 +106,21 @@ button:hover {
   padding: 8px 15px;
   border-radius: 6px;
   color: #333;
-  transition: 0.3s;
+  transition: background 0.3s, color 0.3s;
 }
 
 .btn-back:hover {
   background: #999;
   color: #fff;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  .submit-section {
+    grid-column: 1;
+  }
 }

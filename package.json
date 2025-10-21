@@ -1,0 +1,26 @@
+{
+  "name": "finalproject",
+  "version": "1.0.0",
+  "description": "To extract the git files:\r 1. Copy this https://github.com/Jkpendon17/FinalProject.git\r 2. Go to VSCODE and open the terminal\r 3. Then, type git clone (ctrl+v) then enter",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jkpendon17/FinalProject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jkpendon17/FinalProject/issues"
+  },
+  "homepage": "https://github.com/Jkpendon17/FinalProject#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^3.1.10"
+  }
+}

@@ -1,109 +1,134 @@
-
-
+/* General Reset */
 body {
-  background-color: #f4f6f8;
+  background-color: #f7f9fc;
   color: #333;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Main Container */
 .container {
-  max-width: 900px;
-  margin: 60px auto; /* added more top margin for space below header */
-  background: #ffffff;
-  padding: 30px;
+  flex: 1;
+  max-width: 700px;
+  width: 90%;
+  background: #fff;
+  margin: 60px auto;
   border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  padding: 40px 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Title */
-.studInfo {
+.container h2.editProf {
+  color: #0056b3;
   text-align: center;
-  margin-bottom: 30px;
-  font-size: 1.6em;
-  color: #222;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
 }
 
-/* Form Layout */
+.container hr {
+  border: none;
+  height: 2px;
+  background-color: #0056b3;
+  margin-bottom: 25px;
+}
+
+/* Form */
 .edit-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 25px; /* little more spacing between columns */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-/* Labels */
-.form-column label {
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
   font-weight: 600;
-  margin-top: 10px;
-  display: block;
-  color: #333;
+  margin-bottom: 6px;
 }
 
-/* Input & Select */
-input,
-select {
+.form-group input {
   width: 100%;
-  padding: 9px 12px;
+  padding: 10px 12px;
   border: 1px solid #ccc;
   border-radius: 6px;
-  margin-top: 5px;
-  background: #f9f9f9;
-  font-size: 14.5px;
+  background-color: #f9f9f9;
+  font-size: 15px;
+  transition: border-color 0.2s;
 }
 
-input:focus,
-select:focus {
+.form-group input:focus {
   outline: none;
-  border-color: #0078D4;
-}
-
-/* Form Actions */
-.form-actions {
-  grid-column: span 2;
-  text-align: center;
-  margin-top: 25px;
+  border-color: #0056b3;
 }
 
 /* Buttons */
+.form-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.btn-primary,
+.btn-back {
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
 .btn-primary {
-  background-color: #0078D4;
+  background-color: #0056b3;
   color: white;
   border: none;
-  padding: 12px 28px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
 }
 
 .btn-primary:hover {
-  background-color: #005fa3;
+  background-color: #004494;
 }
 
 .btn-back {
-  background-color: #ccc;
+  background-color: #f2f6fa;
   color: #333;
-  text-decoration: none;
-  padding: 10px 24px;
-  border-radius: 5px;
-  margin-left: 10px;
-  transition: 0.3s;
+  border: 1px solid #ccc;
 }
 
 .btn-back:hover {
-  background-color: #999;
-  color: #fff;
+  background-color: #e1e7f0;
 }
 
-/* Responsive for smaller screens */
-@media (max-width: 768px) {
-  .edit-form {
-    grid-template-columns: 1fr;
+/* Footer */
+.footer {
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  padding: 15px 0;
+  background-color: #f7f9fc;
+  border-top: 1px solid #ddd;
+  margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .container {
+    padding: 25px 20px;
   }
 
-  .container {
-    padding: 20px;
+  .form-group input {
+    font-size: 14px;
   }
 
   .form-actions {
-    margin-top: 15px;
+    flex-direction: column;
+    gap: 10px;
   }
 }

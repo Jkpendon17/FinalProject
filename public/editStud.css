@@ -1,92 +1,137 @@
-
-
+/* General Reset & Layout */
 body {
   background-color: #f7f9fc;
   color: #333;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Main Container */
 .container {
-  max-width: 900px;
-  margin: 50px auto; /* Increased space from header */
+  flex: 1;
+  max-width: 1000px;
+  width: 90%;
   background: #fff;
-  padding: 30px; /* More spacious padding */
-  border-radius: 12px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  margin: 60px auto;
+  border-radius: 10px;
+  padding: 40px 50px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Header Text */
-.studInfo {
+/* Header Title */
+h2.studInfo {
+  color: #0056b3;
   text-align: center;
-  margin-bottom: 35px;
-  color: #333;
-  font-size: 1.5em;
-  letter-spacing: 0.5px;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
 }
 
 /* Form Layout */
 .edit-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 35px; /* Increased spacing between columns */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
 }
 
-/* Labels */
-.form-column label {
-  font-weight: bold;
-  color: #333;
-  margin-top: 12px;
+.form-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Form Inputs & Labels */
+label {
   display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #333;
 }
 
-/* Input and Select Fields */
-input,
+input[type="text"],
+input[type="number"],
 select {
   width: 100%;
-  padding: 10px 12px; /* Slightly larger input padding */
+  padding: 10px;
+  margin-bottom: 15px;
   border: 1px solid #ccc;
-  border-radius: 8px;
-  margin-top: 6px;
-  background: #f9f9f9;
+  border-radius: 6px;
   font-size: 15px;
+  transition: border-color 0.3s;
 }
 
-/* Button Section */
+input:focus,
+select:focus {
+  border-color: #0056b3;
+  outline: none;
+}
+
+/* Buttons */
 .form-actions {
-  grid-column: span 2;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
   margin-top: 30px;
 }
 
-/* Primary Button */
-.btn-primary {
-  background: #0078D4;
-  color: white;
-  border: none;
-  padding: 13px 26px;
-  border-radius: 6px;
+.btn-primary,
+.btn-back {
   text-decoration: none;
-  cursor: pointer;
-  transition: 0.3s;
-  font-size: 15px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #0056b3;
+  color: #fff;
+  border: none;
 }
 
 .btn-primary:hover {
-  background: #005fa3;
+  background-color: #004494;
 }
 
-/* Back Button */
 .btn-back {
-  background: #ccc;
+  background-color: #f2f6fa;
   color: #333;
-  text-decoration: none;
-  padding: 11px 25px;
-  border-radius: 6px;
-  margin-left: 12px;
-  transition: 0.3s;
+  border: 1px solid #ccc;
 }
 
 .btn-back:hover {
-  background: #999;
-  color: #fff;
+  background-color: #e1e7f0;
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  padding: 15px 0;
+  background-color: #f7f9fc;
+  border-top: 1px solid #ddd;
+  margin-top: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .edit-form {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-column {
+    width: 100%;
+  }
+
+  .btn-primary,
+  .btn-back {
+    width: 100%;
+    text-align: center;
+  }
 }
